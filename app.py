@@ -25,6 +25,9 @@ with file_path.open("rb") as file:
 authenticator = stauth.Authenticate(names, usernames, hashed_passwords,
         'starshadow ai bot', 'abcd', cookie_expiry_days=30)
 
+# Call the login method to initialize the authentication_status
+name, authentication_status, username = authenticator.login("Login", "main")
+
 
 if authentication_status == False:
     st.error("Username/password is incorrect")
